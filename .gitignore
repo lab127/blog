@@ -34,4 +34,14 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-.vscode
+# Editor directories and files
+.vscode/*
+!.vscode/settings.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
