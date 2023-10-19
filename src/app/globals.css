@@ -6,6 +6,7 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --body-color-hex: #333333;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -13,15 +14,40 @@
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
+    --body-color-hex: #e0e0e0;
   }
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background:rgb(var(--background-end-rgb));
+  font-family: var(--font-roboto-serif);
+  color:var(--body-color-hex);
 }
+
+@layer base {
+  h1 {
+    @apply text-3xl;
+  }
+  h2 {
+    @apply text-2xl;
+  }
+
+  h3 {
+    @apply text-xl underline underline-offset-2;
+  }
+
+  code {
+    @apply text-pink-400;
+  }
+
+  pre {
+    @apply block font-light bg-slate-50 text-slate-700 mx-1 my-2 py-1
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-rajdhani);
+  }
+}
+
+
