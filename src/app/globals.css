@@ -6,7 +6,7 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
-  --body-color-hex: #333333;
+  --body-color-hex: #777777;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -20,9 +20,9 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background:rgb(var(--background-end-rgb));
+  background: rgb(var(--background-end-rgb));
   font-family: var(--font-roboto-serif);
-  color:var(--body-color-hex);
+  color: var(--body-color-hex);
 }
 
 @layer base {
@@ -34,7 +34,7 @@ body {
   }
 
   h3 {
-    @apply text-xl underline underline-offset-2;
+    @apply text-xl underline underline-offset-2 my-1;
   }
 
   code {
@@ -42,12 +42,13 @@ body {
   }
 
   pre {
-    @apply block font-light bg-slate-50 text-slate-700 mx-1 my-2 py-1
+    @apply block font-light bg-slate-50 text-slate-700 mx-1 my-2 py-1;
   }
 
-  h1, h2, h3, h4 {
+  h1,
+  h2,
+  h3,
+  h4 {
     font-family: var(--font-rajdhani);
   }
 }
-
-
