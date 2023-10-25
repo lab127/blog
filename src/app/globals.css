@@ -42,7 +42,7 @@ body {
   }
 
   pre {
-    @apply block font-light bg-slate-50 text-slate-700 mx-1 my-2 py-1;
+    @apply block font-light dark:bg-slate-700 bg-slate-50 text-slate-700 mx-1 my-2 py-1;
   }
 
   h1,
