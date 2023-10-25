@@ -14,7 +14,7 @@ function getContent(slug: string[]) {
   return postMatter;
 }
 
-export default function page({ params }: Props) {
+export default function detail({ params }: Props) {
   const { slug } = params;
   const post = getContent(slug);
   return (
