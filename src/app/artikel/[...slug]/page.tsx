@@ -1,7 +1,7 @@
+import Content from "@/components/Content";
 import { posts } from "@/lib/vars";
 import fs from "fs";
 import matter from "gray-matter";
-import Markdown from "markdown-to-jsx";
 import { Metadata } from "next";
 
 type Props = {
@@ -32,7 +32,7 @@ export default function detail({ params }: Props) {
   return (
     <>
       <h1>{post.data.title}</h1>
-      <Markdown>{post.content}</Markdown>
+      <Content content={post.content} />
     </>
   );
 }
