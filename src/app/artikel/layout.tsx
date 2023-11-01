@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { ReactNode } from "react";
 import { Rajdhani, Roboto_Serif } from "next/font/google";
+import Navbar from "@/components/Navbar";
 
 const roboto_serif = Roboto_Serif({
   subsets: ["latin"],
@@ -27,7 +28,7 @@ export const metadata: Metadata = {
 export default function ArtikelLayout({ children }: Props) {
   return (
     <>
-      <nav>NavBar</nav>
+      <Navbar />
       <main
         className={`${roboto_serif.variable} ${rajdhani.variable} max-w-[700px] lg:max-w-[960px] mx-auto pt-9 px-7`}
       >
