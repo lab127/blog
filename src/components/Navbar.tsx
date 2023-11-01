@@ -1,7 +1,10 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 
 export default function Navbar() {
+  const [isHidden, setIsHidden] = useState(true);
   const menu = [
     {
       id: 1,
@@ -37,12 +40,16 @@ export default function Navbar() {
           priority
         />
         <div className="sm:w-3/4">
+          <button type="submit" onClick={() => setIsHidden(!isHidden)}>
+            toggle
+          </button>
           <ul className="flex flex-col items-end sm:flex-row sm:justify-end">
             {menu.map((link) => (
               <li key={link.id}>
                 <Link href={link.url}>{link.name}</Link>
               </li>
             ))}
+            <li className={`${isHidden && "hidden"}`}>test</li>
           </ul>
         </div>
       </div>
