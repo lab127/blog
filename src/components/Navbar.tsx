@@ -26,7 +26,7 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="bg-gray-100 text-neutral-500 dark:text-neutral-300 dark:bg-neutral-300">
+    <nav className="bg-gray-100 text-neutral-500 dark:text-neutral-300 dark:bg-black border-b-[1px] border-gray-800">
       <div className="max-w-[700px] lg:max-w-[960px] mx-auto px-7 py-3 flex flex-col sm:flex-row sm:justify-between">
         <Image
           src="/next.svg"
