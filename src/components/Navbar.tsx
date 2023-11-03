@@ -29,7 +29,6 @@ export default function Navbar() {
     },
   ];
 
-  console.log(isHidden);
   return (
     <>
       <nav className="bg-gray-100 text-neutral-500 dark:text-neutral-300 dark:bg-black dark:border-b-[1px] dark:border-gray-800">
