@@ -30,7 +30,7 @@ export default function ArtikelLayout({ children }: Props) {
     <>
       <Navbar />
       <main
-        className={`${roboto_serif.variable} ${rajdhani.variable} max-w-[700px] lg:max-w-[960px] mx-auto pt-9 px-7`}
+        className={`${roboto_serif.variable} ${rajdhani.variable} max-w-3xl lg:max-w-5xl mx-auto pt-9 px-7`}
       >
         {children}
       </main>
