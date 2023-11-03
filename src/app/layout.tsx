@@ -1,17 +1,13 @@
 import type { Metadata } from "next";
-import { Encode_Sans } from "next/font/google";
+import { Encode_Sans, Inter } from "next/font/google";
 import "./globals.css";
+
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "My Personal Web",
   description: "Blog, Porfolio, Anything about work",
 };
-
-const encode_sans = Encode_Sans({
-  weight: "400",
-  subsets: ["latin"],
-  display: "swap",
-});
 
 export default function RootLayout({
   children,
@@ -20,7 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={encode_sans.className}>{children}</body>
+      <body className={inter.className}>{children}</body>
     </html>
   );
 }
