@@ -24,7 +24,7 @@ type Props = {
   children: ReactNode;
 };
 
-export default function ArtikelLayout({ children }: Props) {
+export default function BlogLayout({ children }: Props) {
   return (
     <body className={`${roboto_serif.variable} ${rajdhani.variable}`}>
       <Navbar />
