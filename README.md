@@ -37,3 +37,9 @@ install 2 dependencies `react-syntax-highlighter` dan `@types/react-syntax-highl
 ```bash
 pnpm add react-syntax-highlighter @types/react-syntax-highlighter
 ```
+
+#### React Icons
+
+```bash
+pnpm add react-icons
+```
