@@ -29,9 +29,7 @@ export default function ArtikelLayout({ children }: Props) {
   return (
     <>
       <Navbar />
-      <main
-        className={`${roboto_serif.variable} ${rajdhani.variable} max-w-3xl lg:max-w-5xl mx-auto pt-9 px-7`}
-      >
+      <main className={`max-w-3xl lg:max-w-5xl mx-auto pt-9 px-7`}>
         {children}
       </main>
     </>
