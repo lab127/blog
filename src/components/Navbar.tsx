@@ -37,13 +37,13 @@ export default function Navbar() {
           <Image
             src="/next.svg"
             alt="Next.js logo"
-            className="dark:invert md:w-1/4"
+            className="dark:invert"
             width={100}
             height={24}
             priority
           />
           <button
-            className="md:w-3/4 md:hidden"
+            className="md:hidden"
             type="submit"
             onClick={() => {
               setIsHidden(!isHidden);
@@ -57,10 +57,10 @@ export default function Navbar() {
         <ul
           className={`${
             isHidden && "hidden"
-          } md:flex absolute bg-gray-200 md:bg-gray-100 md:mt-4 mt-8 top-0`}
+          } md:flex absolute bg-gray-200 md:bg-gray-100 md:my-3 md:mx-0 mt-10 mx-2 top-0`}
         >
           {menu.map((link) => (
-            <li key={link.id} className="px-2">
+            <li key={link.id} className="md:px-2 px-4 py-1">
               <Link href={link.url}> {link.name}</Link>
             </li>
           ))}
