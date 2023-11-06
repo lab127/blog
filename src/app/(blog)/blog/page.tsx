@@ -32,17 +32,18 @@ function createSlug(slug: string) {
   return `${slugDate}/${slugStr}`;
 }
 
-export default function Artikel() {
+export default function Blog() {
   const postsMeta = getPostMeta(posts);
   return (
     <ul>
       {postsMeta.map((postMeta) => (
-        <li key={postMeta.slug}>
-          <Link href={`/artikel/${createSlug(postMeta.slug)}`}>
-            {postMeta.title}
-          </Link>
-          <p>slug asli: {postMeta.slug}</p>
-          <p>{postMeta.excerpt}</p>
+        <li key={postMeta.slug} className="px-2">
+          <h2 className="text-2xl underline underline-offset-1 py-4">
+            <Link href={`/artikel/${createSlug(postMeta.slug)}`}>
+              {postMeta.title}
+            </Link>
+          </h2>
+          <p className="py-2 font-light">{postMeta.excerpt}</p>
         </li>
       ))}
     </ul>

@@ -26,13 +26,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default function detail({ params }: Props) {
+export default function Detail({ params }: Props) {
   const { slug } = params;
   const post = getContent(slug);
   return (
     <>
-      <h1>{post.data.title}</h1>
-      <Content content={post.content} />
+      <h1 className="py-4">{post.data.title}</h1>
+      <div className="leading-relaxed">
+        <Content content={post.content} />
+      </div>
     </>
   );
 }
