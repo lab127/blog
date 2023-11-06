@@ -33,14 +33,16 @@ export default function Navbar() {
     <>
       <nav className="bg-gray-100 text-neutral-500 dark:text-neutral-300 dark:bg-black dark:border-b-[1px] dark:border-gray-800">
         <div className="max-w-3xl lg:max-w-5xl mx-auto px-7 py-4 flex justify-between">
-          <Image
-            src="/next.svg"
-            alt="Next.js logo"
-            className="dark:invert"
-            width={100}
-            height={24}
-            priority
-          />
+          <Link href={`/`}>
+            <Image
+              src="/next.svg"
+              alt="Next.js logo"
+              className="dark:invert"
+              width={100}
+              height={24}
+              priority
+            />
+          </Link>
           <button
             className="md:hidden"
             type="submit"
