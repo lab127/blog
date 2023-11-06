@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 import { Rajdhani, Roboto_Serif } from "next/font/google";
-import Navbar from "@/components/Navbar";
+import Navbar from "@/components/blog/Navbar";
 import { Metadata } from "next";
 
 const roboto_serif = Roboto_Serif({

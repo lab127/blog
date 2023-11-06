@@ -1,4 +1,4 @@
-import Content from "@/components/Content";
+import Content from "@/components/blog/Content";
 import { posts } from "@/lib/vars";
 import fs from "fs";
 import matter from "gray-matter";
