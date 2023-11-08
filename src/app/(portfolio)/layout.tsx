@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "@/styles/globals.css";
 import { ReactNode } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "My Personal Web",
+  title: "Lab127 - Aris",
   description: "Blog, Porfolio, Anything about work",
 };
 
