@@ -1,22 +1,22 @@
 "use client";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { FaMoon, FaSun } from "react-icons/fa";
+import dynamic from "next/dynamic";
+
+const DarkModeNoSSR = dynamic(() => import("@/components/DarkModeBtn"), {
+  ssr: false,
+});
 
 export default function Home() {
-  const [darkMode, setDarkMode] = useState(() =>
+  const bool =
     typeof localStorage !== "undefined" && localStorage.getItem("dark")
       ? true
-      : false
-  );
+      : false;
+
+  const [darkMode, setDarkMode] = useState(bool);
 
   function darkClick() {
     setDarkMode(!darkMode);
-    // if (!darkMode) {
-    //   localStorage.setItem("dark", "true");
-    // } else {
-    //   localStorage.removeItem("dark");
-    // }
   }
 
   useEffect(() => {
@@ -33,10 +33,7 @@ export default function Home() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <button onClick={darkClick} type="submit" suppressHydrationWarning>
-        {/* {darkMode ? <FaMoon size="20" /> : <FaSun size="20" />} */}
-        {darkMode ? `Light Mode` : `Dark Mode`}
-      </button>
+      <DarkModeNoSSR onClick={darkClick} isDarkMode={darkMode} />
       <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
         <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
           Get started by editing&nbsp;
