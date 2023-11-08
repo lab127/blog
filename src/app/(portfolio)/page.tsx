@@ -4,40 +4,38 @@ import { useEffect, useState } from "react";
 import { FaMoon, FaSun } from "react-icons/fa";
 
 export default function Home() {
-  const [darkMode, setDarkMode] = useState(() => {
-    try {
-      return typeof localStorage !== "undefined" && localStorage.getItem("dark")
-        ? true
-        : false;
-    } catch (error) {
-      return false;
-    }
-  });
+  const [darkMode, setDarkMode] = useState(() =>
+    typeof localStorage !== "undefined" && localStorage.getItem("dark")
+      ? true
+      : false
+  );
 
   function darkClick() {
     setDarkMode(!darkMode);
-    if (!darkMode) {
-      localStorage.setItem("dark", "true");
-    } else {
-      localStorage.removeItem("dark");
-    }
+    // if (!darkMode) {
+    //   localStorage.setItem("dark", "true");
+    // } else {
+    //   localStorage.removeItem("dark");
+    // }
   }
 
   useEffect(() => {
     const htmlTagClass = document.documentElement.classList;
     if (darkMode) {
+      localStorage.setItem("dark", "true");
       htmlTagClass.add("dark");
       document.title = "Dark App";
     } else {
+      localStorage.removeItem("dark");
       htmlTagClass.remove("dark");
     }
   }, [darkMode]);
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <button onClick={darkClick} type="submit">
+      <button onClick={darkClick} type="submit" suppressHydrationWarning>
         {/* {darkMode ? <FaMoon size="20" /> : <FaSun size="20" />} */}
-        {darkMode ? <p>Dark Mode</p> : <p>Light Mode</p>}
+        {darkMode ? `Light Mode` : `Dark Mode`}
       </button>
       <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
         <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
