@@ -1,43 +1,22 @@
-"use client";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import Link from "next/link";
 import dynamic from "next/dynamic";
 
-const DarkModeNoSSR = dynamic(() => import("@/components/DarkModeBtn"), {
+const DarkModeBtnSSR = dynamic(() => import("@/components/DarkModeBtn"), {
   ssr: false,
 });
 
 export default function Home() {
-  const bool =
-    typeof localStorage !== "undefined" && localStorage.getItem("dark")
-      ? true
-      : false;
-
-  const [darkMode, setDarkMode] = useState(bool);
-
-  function darkClick() {
-    setDarkMode(!darkMode);
-  }
-
-  useEffect(() => {
-    const htmlTagClass = document.documentElement.classList;
-    if (darkMode) {
-      localStorage.setItem("dark", "true");
-      htmlTagClass.add("dark");
-      document.title = "Dark App";
-    } else {
-      localStorage.removeItem("dark");
-      htmlTagClass.remove("dark");
-    }
-  }, [darkMode]);
-
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <DarkModeNoSSR onClick={darkClick} isDarkMode={darkMode} />
+      <div suppressHydrationWarning={true}>
+        <DarkModeBtnSSR />
+      </div>
       <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
         <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
           Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
+          <code className="font-mono font-bold">app/page.tsx</code>&nbsp;
+          <Link href={`/blog`}>Blog</Link>
         </p>
         <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
           <a
