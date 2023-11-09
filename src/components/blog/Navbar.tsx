@@ -50,7 +50,11 @@ export default function Navbar() {
               setIsHidden(!isHidden);
             }}
           >
-            {isHidden ? <AiOutlineMenu /> : <AiOutlineClose />}
+            {isHidden ? (
+              <AiOutlineMenu size="20" />
+            ) : (
+              <AiOutlineClose size="20" />
+            )}
           </button>
         </div>
       </nav>
@@ -58,7 +62,7 @@ export default function Navbar() {
         <ul
           className={`${
             isHidden && "hidden"
-          } md:flex absolute bg-gray-200 md:bg-gray-100 md:my-3 md:mx-0 mt-10 mx-2 top-0`}
+          } md:flex absolute bg-inherit md:my-3 md:mx-0 mt-12 mx-2 top-0`}
         >
           {menu.map((link) => (
             <li key={link.id} className="md:px-2 px-4 py-1">
