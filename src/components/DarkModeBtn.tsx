@@ -5,8 +5,12 @@ import { FaMoon, FaSun } from "react-icons/fa";
 
 export default function DarkModeBtn() {
   const [darkMode, setDarkMode] = useState(() => {
-    if (typeof window !== "undefined" && window.localStorage.dark) {
-      return true;
+    if (typeof window !== "undefined") {
+      if (window.localStorage.dark) {
+        return true;
+      } else {
+        return false;
+      }
     } else {
       return false;
     }
