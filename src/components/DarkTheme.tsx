@@ -1,21 +1,32 @@
 "use client";
-import React from "react";
-import useDarkMode from "@/hooks/useDarkTheme";
-import { FaMoon, FaSun } from "react-icons/fa";
+import useDarkMode from "@/hooks/useDarkMode";
+import {
+  HiOutlineDesktopComputer,
+  HiDesktopComputer,
+  HiSun,
+  HiOutlineSun,
+  HiMoon,
+  HiOutlineMoon,
+} from "react-icons/hi";
 
 export default function DarkTheme() {
-  const [colorTheme, setTheme] = useDarkMode();
+  const [colorMode, setDarkMode] = useDarkMode();
+
   return (
     <>
-      {colorTheme === "light" ? (
-        <button onClick={() => setTheme("light")} type="submit">
-          <FaSun size={20} />
-        </button>
-      ) : (
-        <button onClick={() => setTheme("dark")} type="submit">
-          <FaMoon size={20} />
-        </button>
-      )}
+      <button onClick={() => setDarkMode("light")} type="submit">
+        {colorMode === "light" ? <HiSun /> : <HiOutlineSun />}
+      </button>
+      <button onClick={() => setDarkMode("dark")} type="submit">
+        {colorMode === "dark" ? <HiMoon /> : <HiOutlineMoon />}
+      </button>
+      <button onClick={() => setDarkMode("system")} type="submit">
+        {colorMode === "system" ? (
+          <HiDesktopComputer />
+        ) : (
+          <HiOutlineDesktopComputer />
+        )}
+      </button>
     </>
   );
 }
