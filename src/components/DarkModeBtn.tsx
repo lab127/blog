@@ -3,8 +3,6 @@
 import { useEffect, useState } from "react";
 import { FaMoon, FaSun } from "react-icons/fa";
 
-// tugas: buat key: theme, value: dark | light | system
-
 export default function DarkModeBtn() {
   const [darkMode, setDarkMode] = useState(() => {
     if (typeof window !== "undefined" && window.localStorage.dark) {
@@ -13,10 +11,6 @@ export default function DarkModeBtn() {
       return false;
     }
   });
-
-  function darkClick() {
-    setDarkMode((prev) => !prev);
-  }
 
   useEffect(() => {
     if (darkMode) {
@@ -28,6 +22,10 @@ export default function DarkModeBtn() {
       document.documentElement.classList.remove("dark");
     }
   }, [darkMode]);
+
+  function darkClick() {
+    setDarkMode((prev) => !prev);
+  }
 
   return (
     <button onClick={darkClick} type="submit">
