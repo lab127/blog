@@ -4,7 +4,3 @@ export type PostMeta = {
   excerpt: string;
   slug: string;
 };
-
-export type Theme = {
-  mode: "dark" | "light";
-};
