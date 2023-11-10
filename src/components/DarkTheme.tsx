@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import useDarkMode from "@/hooks/useDarkMode";
+import useDarkMode from "@/hooks/useDarkTheme";
 import { FaMoon, FaSun } from "react-icons/fa";
 
 export default function DarkTheme() {
