@@ -31,46 +31,54 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="bg-gray-100 text-neutral-500 dark:text-neutral-300 dark:bg-black dark:border-b-[1px] dark:border-gray-800">
-        <div className="max-w-3xl lg:max-w-5xl mx-auto px-7 py-4 flex justify-between">
-          <Link href={`/`}>
-            <Image
-              src="/next.svg"
-              alt="Next.js logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </Link>
-          <button
-            className="md:hidden"
-            type="submit"
-            onClick={() => {
-              setIsHidden(!isHidden);
-            }}
-          >
-            {isHidden ? (
-              <AiOutlineMenu size="20" />
-            ) : (
-              <AiOutlineClose size="20" />
-            )}
-          </button>
+      {/* <nav className="bg-gray-100 text-neutral-500 dark:text-neutral-300 dark:bg-black dark:border-b-[1px] dark:border-gray-800"> */}
+      <nav className="z-10 fixed left-0 top-0 w-full border-b border-gray-300 bg-gradient-to-b from-zinc-200 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit">
+        <div className="max-w-3xl lg:max-w-5xl lg:flex lg:justify-between items-center mx-auto">
+          <div className="px-7 py-4 flex justify-between">
+            <Link href={`/`}>
+              <Image
+                src="/next.svg"
+                alt="Next.js logo"
+                className="dark:invert"
+                width={100}
+                height={24}
+                priority
+              />
+            </Link>
+            <button
+              className="lg:hidden"
+              type="submit"
+              onClick={() => {
+                setIsHidden(!isHidden);
+              }}
+            >
+              {isHidden ? (
+                <AiOutlineMenu size="20" />
+              ) : (
+                <AiOutlineClose size="20" />
+              )}
+            </button>
+          </div>
+          <div className="flex justify-end lg:px-7">
+            <ul
+              className={`${
+                isHidden && "hidden"
+              } lg:flex absolute bg-inherit lg:my-3 lg:mx-0 mt-12 mx-2 top-0 bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none drop-shadow-xl`}
+            >
+              {menu.map((link) => (
+                <li key={link.id} className="lg:px-2 px-4 py-1">
+                  <Link
+                    className="text-zinc-800 hover:text-pink-700"
+                    href={link.url}
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </nav>
-      <div className="flex justify-end max-w-[700px] lg:max-w-[960px] mx-auto">
-        <ul
-          className={`${
-            isHidden && "hidden"
-          } md:flex absolute bg-inherit md:my-3 md:mx-0 mt-12 mx-2 top-0`}
-        >
-          {menu.map((link) => (
-            <li key={link.id} className="md:px-2 px-4 py-1">
-              <Link href={link.url}> {link.name}</Link>
-            </li>
-          ))}
-        </ul>
-      </div>
     </>
   );
 }

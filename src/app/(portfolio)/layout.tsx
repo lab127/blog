@@ -1,3 +1,4 @@
+import Navbar from "@/components/Navbar";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { ReactNode } from "react";
@@ -14,5 +15,10 @@ type Props = {
 };
 
 export default function PortfolioLayout({ children }: Props) {
-  return <body className={inter.className}>{children}</body>;
+  return (
+    <body className={inter.className}>
+      <Navbar />
+      {children}
+    </body>
+  );
 }
