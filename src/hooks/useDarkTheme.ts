@@ -1,7 +1,7 @@
-"use client";
+// dark mode hooks v1
 import { useEffect, useState } from "react";
 
-function useDarkMode() {
+function useDarkTheme() {
   const [theme, setTheme] = useState(
     typeof window !== "undefined" && window.localStorage["my-theme"]
       ? "dark"
@@ -24,4 +24,4 @@ function useDarkMode() {
   return [colorTheme, setTheme];
 }
 
-export default useDarkMode;
+export default useDarkTheme;
