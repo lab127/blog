@@ -1,4 +1,5 @@
 import DarkModeBtn from "@/components/DarkModeBtn";
+import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
@@ -19,10 +20,10 @@ export default function PortfolioLayout({ children }: Props) {
   return (
     <body className={inter.className}>
       <Navbar />
-      {children}
-      <div className="flex justify-end py-6 max-w-3xl lg:max-w-5xl mx-auto px-7 mt-14">
-        <DarkModeBtn />
-      </div>{" "}
+      <main className="py-6 max-w-3xl lg:max-w-5xl mx-auto px-7 mt-14">
+        {children}
+      </main>
+      <Footer />
     </body>
   );
 }

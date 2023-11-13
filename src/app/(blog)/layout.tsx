@@ -3,6 +3,7 @@ import { Rajdhani, Roboto_Serif } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import { Metadata } from "next";
 import DarkModeBtn from "@/components/DarkModeBtn";
+import Footer from "@/components/Footer";
 
 const roboto_serif = Roboto_Serif({
   subsets: ["latin"],
@@ -31,10 +32,8 @@ export default function BlogLayout({ children }: Props) {
       <Navbar />
       <main className={`max-w-3xl lg:max-w-5xl mx-auto pt-9 px-7 mt-14`}>
         {children}
-        <div className="flex justify-end py-6">
-          <DarkModeBtn />
-        </div>
       </main>
+      <Footer />
     </body>
   );
 }
