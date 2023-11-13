@@ -37,8 +37,8 @@ export default function Navbar() {
           <div className="px-7 py-4 flex justify-between">
             <Link href={`/`}>
               <Image
-                src="/next.svg"
-                alt="Next.js logo"
+                src="/lab127.svg"
+                alt="Lab 127 logo"
                 className="dark:invert"
                 width={100}
                 height={24}
