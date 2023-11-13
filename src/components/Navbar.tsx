@@ -14,8 +14,8 @@ export default function Navbar() {
     },
     {
       id: 2,
-      url: "#about",
-      name: "About",
+      url: "#projects",
+      name: "Projects",
     },
     {
       id: 3,
@@ -63,12 +63,12 @@ export default function Navbar() {
             <ul
               className={`${
                 isHidden && "hidden"
-              } lg:flex absolute bg-inherit lg:my-3 lg:mx-0 mt-12 mx-2 top-0 bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none drop-shadow-xl`}
+              } lg:flex absolute bg-inherit lg:my-3 lg:mx-0 mt-14 mx-2 top-0 bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none drop-shadow-xl`}
             >
               {menu.map((link) => (
                 <li key={link.id} className="lg:px-2 px-4 py-1">
                   <Link
-                    className="text-zinc-800 hover:text-pink-700"
+                    className="text-zinc-800 dark:text-zinc-400 hover:text-pink-700"
                     href={link.url}
                   >
                     {link.name}
