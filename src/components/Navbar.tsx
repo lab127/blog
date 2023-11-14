@@ -14,16 +14,21 @@ export default function Navbar() {
     },
     {
       id: 2,
+      url: "/#about",
+      name: "About",
+    },
+    {
+      id: 3,
       url: "#projects",
       name: "Projects",
     },
     {
-      id: 3,
+      id: 4,
       url: "/blog",
       name: "Blog",
     },
     {
-      id: 4,
+      id: 5,
       url: "#contact",
       name: "Contact",
     },
