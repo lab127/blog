@@ -20,7 +20,7 @@ export default function PortfolioLayout({ children }: Props) {
   return (
     <body className={inter.className}>
       <Navbar />
-      <main className="py-6 max-w-3xl lg:max-w-5xl mx-auto px-7 mt-14">
+      <main className="max-w-3xl lg:max-w-5xl mx-auto px-7 py-6">
         {children}
       </main>
       <Footer />
