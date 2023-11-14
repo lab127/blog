@@ -33,7 +33,7 @@ export default function DarkModeBtn() {
 
   return (
     <button onClick={darkClick} type="submit">
-      {darkMode ? <FaSun size="20" /> : <FaMoon size="20" />}
+      {darkMode ? <FaSun size="15" /> : <FaMoon size="15" />}
     </button>
   );
 }
