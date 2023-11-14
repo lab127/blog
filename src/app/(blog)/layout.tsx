@@ -2,7 +2,6 @@ import { ReactNode } from "react";
 import { Rajdhani, Roboto_Serif } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import { Metadata } from "next";
-import DarkModeBtn from "@/components/DarkModeBtn";
 import Footer from "@/components/Footer";
 
 const roboto_serif = Roboto_Serif({
