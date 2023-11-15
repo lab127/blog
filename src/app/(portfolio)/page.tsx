@@ -1,4 +1,4 @@
-import projects from "@/lib/projects";
+import portfolios from "@/lib/portfolios";
 import { FaGithub } from "react-icons/fa";
 
 export default function Home() {
@@ -68,22 +68,22 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="projects" className="flex flex-col">
-        {projects.map((project) => (
-          <div key={project.name} className="min-h-screen flex items-center">
+      <section id="portfolio" className="flex flex-col">
+        {portfolios.map((portfolio) => (
+          <div key={portfolio.name} className="min-h-screen flex items-center">
             <div className="grid grid-cols-2 border border-spacing-1">
               <div className="max-h-52 w-full overflow-hidden">
                 <img
                   className="translate-y-0 transition duration-1000 ease-in-out hover:-translate-y-3/4 w-full"
-                  src={`/portfolio/${project.screenshots}`}
-                  alt={project.name}
+                  src={`/portfolio/${portfolio.screenshots}`}
+                  alt={portfolio.name}
                 />
               </div>
               <div className="w-full h-auto">
-                <h2>{project.name}</h2>
-                <p>{project.info}</p>
+                <h2>{portfolio.name}</h2>
+                <p>{portfolio.info}</p>
                 <ul>
-                  {project.tech_stack.map((tech) => (
+                  {portfolio.tech_stack.map((tech) => (
                     <li key={tech}>{tech}</li>
                   ))}
                 </ul>
