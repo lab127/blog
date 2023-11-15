@@ -45,8 +45,9 @@ export default function Navbar() {
                 src="/lab127.svg"
                 alt="Lab 127 logo"
                 className="dark:invert"
-                width={100}
-                height={24}
+                width="0"
+                height="0"
+                style={{ width: "100px", height: "auto" }}
                 priority
               />
             </Link>
