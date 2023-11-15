@@ -1,11 +1,4 @@
-import Link from "next/link";
 import { FaGithub } from "react-icons/fa";
-
-// import dynamic from "next/dynamic";
-
-// const DarkModeBtnSSR = dynamic(() => import("@/components/DarkModeBtn"), {
-//   ssr: false,
-// });
 
 export default function Home() {
   return (
@@ -50,19 +43,28 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="about">
-        <h2>About me</h2>
-        <h4>A dedicated Front-end Developer based in Yogyakarta, Indonesia</h4>
-        <p>
-          As a Front-End Developer, I possess an impressive arsenal of skills in
-          HTML, CSS, JavaScript, React, Tailwind, and SCSS. I excel in designing
-          and maintaining responsive websites that offer a smooth user
-          experience. My expertise lies in crafting dynamic, engaging interfaces
-          through writing clean and optimized code and utilizing cutting-edge
-          development tools and techniques. I am also a team player who thrives
-          in collaborating with cross-functional teams to produce outstanding
-          web applications.
-        </p>
+      <section
+        id="about"
+        className="min-h-screen flex flex-col justify-evenly pb-14 pt-24 lg:pt-32"
+      >
+        <h2 className="uppercase text-3xl">About me</h2>
+        <h4 className="text-2xl font-light">
+          A dedicated Front-End React Developer based in Yogyakarta, Indonesia
+        </h4>
+        <div className="leading-relaxed space-y-4">
+          <p>
+            Aspiring web developer with 10+ years' experience in E-Commerce
+            using Shopify, WooCommerce, and BigCommerce. Recently, I pivoted my
+            career from back-end to front-end react developer due to challenge
+            and interest in JavaScript technology.
+          </p>
+          <p>
+            Currently, I am focus on installing, testing, and maintenance
+            WordPress and WooCommerce websites. I typically use HTML, CSS and
+            JavaScript in the client while using PHP, Python or Node.js for
+            back-end.
+          </p>
+        </div>
       </section>
 
       <div className="mb-32 mt-4 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
