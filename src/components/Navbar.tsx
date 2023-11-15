@@ -19,8 +19,8 @@ export default function Navbar() {
     },
     {
       id: 3,
-      url: "#projects",
-      name: "Projects",
+      url: "#portfolio",
+      name: "Porfolio",
     },
     {
       id: 4,
