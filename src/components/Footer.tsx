@@ -1,4 +1,8 @@
-import DarkModeBtn from "./DarkModeBtn";
+import dynamic from "next/dynamic";
+
+const DarkModeBtnSSR = dynamic(() => import("@/components/DarkModeBtn"), {
+  ssr: false,
+});
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -7,7 +11,7 @@ export default function Footer() {
       <div className="max-w-3xl lg:max-w-5xl mx-auto py-4 px-7">
         <div className="flex justify-between items-center">
           <p>Copyright &copy; {currentYear}. All rights are reserved</p>
-          <DarkModeBtn />
+          <DarkModeBtnSSR />
         </div>
       </div>
     </footer>
