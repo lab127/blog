@@ -23,22 +23,14 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="flex flex-col items-center justify-between my-8 sm:flex-row sm:space-x-2">
-        <p className="font-bold text-2xl underline underline-offset-4 sm:no-underline py-4 sm:border-r-2 sm:pr-2">
+      <div className="flex flex-col items-center justify-between my-8 lg:flex-row lg:space-x-2">
+        <p className="font-bold text-2xl underline underline-offset-4 lg:no-underline py-4 lg:border-r-2 lg:pr-2">
           Tech Stack
         </p>
-        <div className="grid gap-4 grid-cols-2 sm:grid-cols-4">
-          <img src="https://skillicons.dev/icons?i=html,css" alt="html,css" />
-          <img src="https://skillicons.dev/icons?i=js,ts" alt="js,ts" />
-          <img
-            src="https://skillicons.dev/icons?i=react,next"
-            alt="react,next"
-          />
-          <img
-            src="https://skillicons.dev/icons?i=tailwind,scss"
-            alt="tailwind,scss"
-          />
-        </div>
+        <img
+          src="https://skillicons.dev/icons?i=html,css,js,ts,react,next,tailwind"
+          alt="html,css,js,ts,react,next,tailwind"
+        />
       </div>
     </section>
   );
