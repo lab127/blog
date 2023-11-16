@@ -27,9 +27,11 @@ type Props = {
 
 export default function BlogLayout({ children }: Props) {
   return (
-    <body className={`${roboto_serif.variable} ${rajdhani.variable}`}>
+    <body
+      className={`${roboto_serif.variable} ${rajdhani.variable} min-h-screen m-0 flex flex-col`}
+    >
       <Navbar />
-      <main className={`max-w-3xl lg:max-w-5xl mx-auto pt-9 px-7 mt-14`}>
+      <main className={`max-w-3xl lg:max-w-5xl mx-auto py-9 px-7 mt-14 flex-1`}>
         {children}
       </main>
       <Footer />
