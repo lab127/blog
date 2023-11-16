@@ -1,6 +1,10 @@
 import portfolios from "@/lib/portfolios";
 import { FaGithub } from "react-icons/fa";
 
+function isEven(n: number) {
+  return n % 2 === 0;
+}
+
 export default function Home() {
   return (
     <>
@@ -69,18 +73,23 @@ export default function Home() {
       </section>
 
       <section id="portfolio" className="flex flex-col">
-        {portfolios.map((portfolio) => (
-          <div key={portfolio.name} className="min-h-screen flex items-center">
-            <div className="grid grid-cols-2 border border-spacing-1">
-              <div className="max-h-52 w-full overflow-hidden">
+        {portfolios.map((portfolio, index) => (
+          <div key={index} className="min-h-screen flex items-center">
+            <div
+              className={`flex flex-col ${
+                isEven(index + 1) ? "lg:flex-row-reverse" : "lg:flex-row"
+              } border border-spacing-1`}
+            >
+              <div className="max-h-96 w-full overflow-hidden">
                 <img
-                  className="translate-y-0 transition duration-1000 ease-in-out hover:-translate-y-3/4 w-full"
+                  className="translate-y-0 transition duration-[10000ms] ease-in-out hover:-translate-y-3/4 w-full"
                   src={`/portfolio/${portfolio.screenshots}`}
                   alt={portfolio.name}
                 />
               </div>
-              <div className="w-full h-auto">
+              <div className="w-full h-auto text-center">
                 <h2>{portfolio.name}</h2>
+                <p>index: {isEven(index + 1) ? "even" : "odd"}</p>
                 <p>{portfolio.info}</p>
                 <ul>
                   {portfolio.tech_stack.map((tech) => (
