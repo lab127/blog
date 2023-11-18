@@ -1,4 +1,4 @@
-# Next.js Markdown Blog Static Site
+# Next.js Portfolio & Markdown SSG Blog
 
 #### Convert markdown to JSX
 
