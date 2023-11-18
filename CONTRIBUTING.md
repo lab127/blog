@@ -53,7 +53,7 @@ git add remote add upstream git@github.com:forked-from/repo-name.git
 for example:
 
 ```bash
-git add remote add upstream git@github.com:lab127/blog.git
+git add remote add upstream git@github.com:lab127/nextjs-blog-porfolio.git
 ```
 
 #### Update to newest forked
