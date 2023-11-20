@@ -42,21 +42,6 @@ export default function Navbar() {
     setIsDesktop(window.innerWidth >= 1024);
   }, []);
 
-  // useEffect(() => {
-  //   setScreenSize(window.innerWidth);
-  //   const updateScreenSize = () => {
-  //     if (screenSize && screenSize >= 1024) {
-  //       setIsHidden(false);
-  //     } else {
-  //       setIsHidden(true);
-  //     }
-  //   };
-
-  //   window.addEventListener("resize", updateScreenSize);
-  //   return () => window.removeEventListener("resize", updateScreenSize);
-  // }, [screenSize]);
-
-  console.log("ishidden", isHidden);
   return (
     <header>
       <nav className="z-10 fixed left-0 top-0 w-full border-b border-gray-300 bg-gradient-to-b from-zinc-200 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit">
