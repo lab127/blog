@@ -1,5 +1,7 @@
 # Next.js Portfolio & Markdown SSG Blog
 
+#### [Live Preview](https://lab127.vercel.app/)
+
 #### Convert markdown to JSX
 
 agar bisa di baca di `page.tsx`
