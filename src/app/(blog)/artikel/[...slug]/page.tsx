@@ -5,20 +5,24 @@ import fs from "fs";
 import matter from "gray-matter";
 import { Metadata } from "next";
 
-function getContent(slug: string[]) {
-  const file = `${posts}/${slug.join("-")}.md`;
-  const content = fs.readFileSync(file, "utf8");
-  const postMatter = matter(content);
-  return postMatter;
-}
-
+/**
+ *
+ * @returns {Array.<Object>} slug: string[]
+ */
 export async function generateStaticParams() {
   const files = fs.readdirSync(posts);
   const markdownPosts = files.filter((file) => file.endsWith(".md"));
 
   return markdownPosts.map((post) => ({
-    slug: createSlug(post.replace(".md", "")),
+    slug: createSlug(post.replace(".md", "")).split("/"),
   }));
+}
+
+function getContent(slug: string[]) {
+  const file = `${posts}/${slug.join("-")}.md`;
+  const content = fs.readFileSync(file, "utf8");
+  const postMatter = matter(content);
+  return postMatter;
 }
 
 type Props = {
