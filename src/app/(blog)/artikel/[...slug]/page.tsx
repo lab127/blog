@@ -1,12 +1,9 @@
 import Content from "@/components/blog/Content";
+import { createSlug } from "@/lib/functions";
 import { posts } from "@/lib/vars";
 import fs from "fs";
 import matter from "gray-matter";
 import { Metadata } from "next";
-
-type Props = {
-  params: { slug: string[] };
-};
 
 function getContent(slug: string[]) {
   const file = `${posts}/${slug.join("-")}.md`;
@@ -14,6 +11,19 @@ function getContent(slug: string[]) {
   const postMatter = matter(content);
   return postMatter;
 }
+
+export async function generateStaticParams() {
+  const files = fs.readdirSync(posts);
+  const markdownPosts = files.filter((file) => file.endsWith(".md"));
+
+  return markdownPosts.map((post) => ({
+    slug: createSlug(post.replace(".md", "")),
+  }));
+}
+
+type Props = {
+  params: { slug: string[] };
+};
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const slug = params.slug;
