@@ -3,6 +3,7 @@ import Link from "next/link";
 import { posts } from "@/lib/vars";
 import matter from "gray-matter";
 import { PostMeta } from "@/lib/types";
+import { createSlug } from "@/lib/functions";
 
 function getPostMeta(folder: string): PostMeta[] {
   const files = fs.readdirSync(folder);
@@ -22,14 +23,6 @@ function getPostMeta(folder: string): PostMeta[] {
   });
 
   return posts;
-}
-
-function createSlug(slug: string) {
-  const slugArr = slug.split("-");
-  const regexDate = /\d{4}-\d{2}-\d{2}-/i;
-  const slugStr = slug.replace(regexDate, "");
-  const slugDate = slugArr.slice(0, 3).join("/");
-  return `${slugDate}/${slugStr}`;
 }
 
 export default function Blog() {
